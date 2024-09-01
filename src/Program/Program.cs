@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Threading;
 
-namespace Ucu.Poo.GameOfLife
+namespace Ucu.Poo.GameOfLife;
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        FileReader lectorArchivo = new FileReader();
+        bool[,] estadoInicial = lectorArchivo.LeerBlocDeNotas("board.txt");
+        Board tablero = new Board(estadoInicial);
+        Logic logicaJuego = new Logic();
+        PrintBoard impresoraTablero = new PrintBoard();
+        while (true)
         {
-            Console.WriteLine("Hello World!");
+            Console.Clear();
+            impresoraTablero.Imprimir(tablero);
+            logicaJuego.ActualizarTablero(tablero);
+            Thread.Sleep(300);
         }
     }
 }
