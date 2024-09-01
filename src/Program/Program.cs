@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿using System;
 using System.Threading;
 
@@ -20,3 +21,6 @@ class Program
         }
     }
 }
+=======
+﻿
+>>>>>>> Stashed changes
